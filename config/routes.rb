@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   root  'static_pages#home'
   
 
-  match '/signup',  to: 'users#new',            via: 'get' 
-  match '/help',    to: 'static_pages#help',    via: 'get' 
+   match '/signup',  to: 'users#new',            via: 'get' 
+   match '/help',    to: 'static_pages#help',    via: 'get' 
 
-  get "static_pages/home" 
-  get "static_pages/help" 
-  get "static_pages/about" 
-  get "static_pages/contact" 
+ 
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
